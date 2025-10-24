@@ -22,152 +22,150 @@ class CartView extends StatelessWidget {
         return Scaffold(
           body: Stack(
             children: [
-              SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 400,
-                      child: Image.network(
-                        filterQuality: FilterQuality.high,
-                        food.foodImage,
-                        fit: BoxFit.cover,
-                      ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 400,
+                    child: Image.network(
+                      filterQuality: FilterQuality.high,
+                      food.foodImage,
+                      fit: BoxFit.cover,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.blue.shade200,
-                        border: const Border(
-                          top: BorderSide(
-                            color: Colors.white,
-                            width: 2,
-                          ),
-                          bottom: BorderSide.none,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade200,
+                      border: const Border(
+                        top: BorderSide(
+                          color: Colors.white,
+                          width: 2,
                         ),
-                      ),
-                      height: double.maxFinite,
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(right: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  food.foodName,
-                                  style: const TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                GestureDetector(
-                                    onTap: () {
-                                      viewModel.showRatingDialog(context);
-                                    },
-                                    child: Row(
-                                      children: [
-                                        const Icon(
-                                          Icons.star,
-                                          color: Colors.yellow,
-                                        ),
-                                        const SizedBox(
-                                          width: 4,
-                                        ),
-                                        Text(
-                                          '${viewModel.rating}',
-                                          style: const TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ],
-                                    ))
-                              ],
-                            ),
-                          ),
-                          Text(
-                            '\$${food.fullprice}',
-                            style: const TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            food.description,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                            ),
-                          ),
-                          // Review
-                          FutureBuilder(
-                            future: FirebaseFirestore.instance
-                                .collection('products')
-                                .doc(food.foodId)
-                                .collection('reviews')
-                                .get(),
-                            builder: (BuildContext context,
-                                AsyncSnapshot<QuerySnapshot> snapshot) {
-                              if (snapshot.hasError) {
-                                return const Center(
-                                  child: Text('Error'),
-                                );
-                              }
-                              if (snapshot.connectionState ==
-                                  ConnectionState.waiting) {
-                                return const Center(
-                                  child: CircularProgressIndicator(),
-                                );
-                              }
-                              if (snapshot.data!.docs.isEmpty) {
-                                return const Center(
-                                  child: Text('No Reviews Foun!'),
-                                );
-                              }
-                              if (snapshot.data != null) {
-                                return ListView.builder(
-                                  physics: const BouncingScrollPhysics(),
-                                  shrinkWrap: true,
-                                  itemCount: snapshot.data!.docs.length,
-                                  itemBuilder: (context, index) {
-                                    var data = snapshot.data!.docs[index];
-
-                                    RatingModel ratingModel = RatingModel(
-                                      customerName: data['customerName'],
-                                      customerId: data['customerId'],
-                                      customerPhone: data['customerPhone'],
-                                      customerDeviceToken:
-                                          data['customerDeviceToken'],
-                                      feedback: data['feedback'],
-                                      rating: data['rating'],
-                                      createdAt: data['createdAt'],
-                                    );
-
-                                    return Card(
-                                      elevation: 5,
-                                      child: ListTile(
-                                        leading: CircleAvatar(
-                                          child:
-                                              Text(ratingModel.customerName[0]),
-                                        ),
-                                        title: Text(ratingModel.customerName),
-                                        subtitle: Text(ratingModel.feedback),
-                                        trailing: Text(ratingModel.rating),
-                                      ),
-                                    );
-                                  },
-                                );
-                              }
-                              return Container();
-                            },
-                          ),
-                        ],
+                        bottom: BorderSide.none,
                       ),
                     ),
-                  ],
-                ),
+                    height: 400,
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                food.foodName,
+                                style: const TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              GestureDetector(
+                                  onTap: () {
+                                    viewModel.showRatingDialog(context);
+                                  },
+                                  child: Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.star,
+                                        color: Colors.yellow,
+                                      ),
+                                      const SizedBox(
+                                        width: 4,
+                                      ),
+                                      Text(
+                                        '${viewModel.rating}',
+                                        style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ))
+                            ],
+                          ),
+                        ),
+                        Text(
+                          '\$${food.fullprice}',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          food.description,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                        // Review
+                        FutureBuilder(
+                          future: FirebaseFirestore.instance
+                              .collection('products')
+                              .doc(food.foodId)
+                              .collection('reviews')
+                              .get(),
+                          builder: (BuildContext context,
+                              AsyncSnapshot<QuerySnapshot> snapshot) {
+                            if (snapshot.hasError) {
+                              return const Center(
+                                child: Text('Error'),
+                              );
+                            }
+                            if (snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                              return const Center(
+                                child: CircularProgressIndicator(),
+                              );
+                            }
+                            if (snapshot.data!.docs.isEmpty) {
+                              return const Center(
+                                child: Text('No Reviews Foun!'),
+                              );
+                            }
+                            if (snapshot.data != null) {
+                              return ListView.builder(
+                                physics: const BouncingScrollPhysics(),
+                                shrinkWrap: true,
+                                itemCount: snapshot.data!.docs.length,
+                                itemBuilder: (context, index) {
+                                  var data = snapshot.data!.docs[index];
+
+                                  RatingModel ratingModel = RatingModel(
+                                    customerName: data['customerName'],
+                                    customerId: data['customerId'],
+                                    customerPhone: data['customerPhone'],
+                                    customerDeviceToken:
+                                        data['customerDeviceToken'],
+                                    feedback: data['feedback'],
+                                    rating: data['rating'],
+                                    createdAt: data['createdAt'],
+                                  );
+
+                                  return Card(
+                                    elevation: 5,
+                                    child: ListTile(
+                                      leading: CircleAvatar(
+                                        child:
+                                            Text(ratingModel.customerName[0]),
+                                      ),
+                                      title: Text(ratingModel.customerName),
+                                      subtitle: Text(ratingModel.feedback),
+                                      trailing: Text(ratingModel.rating),
+                                    ),
+                                  );
+                                },
+                              );
+                            }
+                            return Container();
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               Positioned(
                 top: 40,

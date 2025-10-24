@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import '../Models/Food_Models.dart';
-import '../Models/Food.dart';
 
 class HomeViewModel extends BaseViewModel {
   final Foodd food;
@@ -53,20 +52,7 @@ class HomeViewModel extends BaseViewModel {
     }
   }
 
-  void addToCart1(Food food, BuildContext context) {
-    Navigator.pop(context);
-  }
-
-  void addToCart(Food food, BuildContext context) {
-    Navigator.pop(context);
-  }
-
-  // final CounterService counterService = locator<CounterService>();
-
-  // void addToCart(Food item) {
-  //   counterService.addToCart(item);
-  //   notifyListeners();
-  // }
+  
 
   double rating = 1.5;
   void showRatingDialog(BuildContext context) {
