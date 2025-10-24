@@ -32,7 +32,10 @@ class Updateusername extends StatelessWidget {
                 ),
                 backgroundColor: Colors.blue.shade200,
                 centerTitle: true,
-                title: const Text('Update User Name'),
+                title: const Text(
+                  'Update User Name',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
               body: Column(
                 children: [
