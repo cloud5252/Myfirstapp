@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:my_first_app/User_panel/Service_Get_x_data/google_auth.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../Get-x_controllers/google_controller.dart';
@@ -20,6 +21,7 @@ class RegisterPage extends StatelessWidget {
     super.key,
   });
   final GoogleController googleController = Get.put(GoogleController());
+  final GoogleAuth googleAuth = Get.put(GoogleAuth());
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +123,8 @@ class RegisterPage extends StatelessWidget {
                               GoogleButton(
                                 text: "Google Sign In",
                                 onTap: () =>
-                                    googleController.getGoogleAccount(),
+                                    // googleController.getGoogleAccount(),
+                                    googleAuth.signInWithGoogle(context),
                               ),
                               const SizedBox(height: 20),
                               Row(

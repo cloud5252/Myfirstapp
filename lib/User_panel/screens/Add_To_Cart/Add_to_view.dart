@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_first_app/User_panel/Service_Get_x_data/Get_servicesKey.dart';
 import 'package:stacked/stacked.dart';
 
 import '../Models/ProductModel.dart';
@@ -40,13 +41,16 @@ class AddToView extends StatelessWidget {
                 onPressed: () {
                   viewModel.showdailog(context);
                 },
-                icon: const Padding(
-                  padding: EdgeInsets.only(right: 10.0),
-                  child: Icon(
-                    Icons.delete,
-                    color: Colors.blueGrey,
-                  ),
-                ),
+                icon: Padding(
+                    padding: EdgeInsets.only(right: 10.0),
+                    child: IconButton(
+                        onPressed: () async {
+                          GetServerkey getServerkey = GetServerkey();
+                          String accesToken =
+                              await getServerkey.getServerskey();
+                          print('Server Key:::::::  $accesToken');
+                        },
+                        icon: Icon(Icons.delete))),
               ),
             ],
           ),

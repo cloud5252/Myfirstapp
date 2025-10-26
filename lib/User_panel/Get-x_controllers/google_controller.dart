@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:my_first_app/Locator/app.locator.dart';
 import 'package:my_first_app/User_panel/screens/Home_page/home_view.dart';
-import '../screens/Fire_base_service/auth_User_Models.dart';
+import '../Service_Get_x_data/auth_User_Models.dart';
 import '../Registration/Sign_up/register_view_model.dart';
 
 class GoogleController extends GetxController {

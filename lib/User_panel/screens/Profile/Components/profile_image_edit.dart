@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/Locator/app.locator.dart';
+import 'package:my_first_app/User_panel/Service_Get_x_data/Authentication.dart';
 
 import 'package:stacked/stacked.dart';
 
@@ -41,7 +43,9 @@ class ProfileImageEdit extends StatelessWidget {
               right: 95,
               child: IconButton(
                   onPressed: () {
-                    viewmodel.pickImage();
+                    // viewmodel.pickImage();
+                    final signout = locator<Authentication>();
+                    signout.signOut();
                   },
                   icon: Container(
                     decoration: BoxDecoration(
