@@ -7,7 +7,7 @@ import 'package:my_first_app/User_panel/screens/checkout_screen/checkout_screen_
 import 'package:my_first_app/User_panel/screens/checkout_screen/component/checkout_list_tile.dart';
 import 'package:my_first_app/User_panel/screens/checkout_screen/component/conformed_orders.dart';
 import 'package:stacked/stacked.dart';
-import '../Models/ProductModel.dart';
+import '../../Models/ProductModel.dart';
 
 class CheckoutScreenView extends StatelessWidget {
   const CheckoutScreenView({super.key});

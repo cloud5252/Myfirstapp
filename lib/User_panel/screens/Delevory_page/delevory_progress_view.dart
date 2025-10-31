@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/User_panel/screens/AddminView/AddminView.dart';
 
 import 'package:stacked/stacked.dart';
 
-import '../ADDMIN_VIEW/Addmin_view.dart';
-import 'Component/My_receipt.dart';
+ import 'Component/My_receipt.dart';
 import 'delevory_progress_model.dart';
 
 class DelevoryProgressView extends StatefulWidget {
@@ -93,7 +93,7 @@ class _DelevoryProgressViewState extends State<DelevoryProgressView> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const AddminView()));
+                              builder: (context) => const Addminview()));
                     },
                     icon: const Icon(Icons.message),
                     color: Colors.grey,

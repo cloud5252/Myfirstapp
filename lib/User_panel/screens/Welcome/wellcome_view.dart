@@ -32,14 +32,6 @@ class WellcomeView extends StatelessWidget {
           ),
           body: Column(
             children: [
-              Container(
-                color: Colors.blue.shade900,
-                height: 300,
-                child: Lottie.asset('assets/splash.json'),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
               Column(
                 children: [
                   const Text(

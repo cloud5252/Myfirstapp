@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-import '../../Models/Food.dart';
+import '../../../Models/Food.dart';
 import '../wishlist_view_model.dart';
 
 class MyCartTile extends StatelessWidget {

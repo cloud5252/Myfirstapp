@@ -12,14 +12,14 @@ class MyButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
-          color: Colors.blue.shade900,
+          color: Colors.orange.shade500,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Center(
           child: Text(
             text,
             style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold),
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
           ),
         ),
       ),

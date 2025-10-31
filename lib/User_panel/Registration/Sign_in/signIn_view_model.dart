@@ -9,9 +9,10 @@ import 'package:stacked/stacked.dart';
 
 import '../../../Locator/app.locator.dart';
 import '../../Service_Get_x_data/Authentication.dart';
-import '../../screens/ADDMIN_VIEW/Addmin_view.dart';
+import '../../screens/AddminView/AddminView.dart';
 import '../../screens/Fire_base_service/addmin&userdata.dart';
 import '../../screens/Home_page/home_view.dart';
+import 'Component/My_bottom_sheet.dart';
 
 class SigninViewModel extends BaseViewModel {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -38,7 +39,7 @@ class SigninViewModel extends BaseViewModel {
         var userData = userdata[0].data() as Map<String, dynamic>;
 
         if (userData['addmin'] == true) {
-          Get.offAll(() => const AddminView());
+          Get.offAll(() => const Addminview());
           Get.snackbar(
             'Home View',
             'Successfully signed in as regular user',
@@ -96,5 +97,17 @@ class SigninViewModel extends BaseViewModel {
       );
       print('Error:::::::::::::::$e');
     }
+  }
+
+  void initialise() {
+    // Delay zero ensures UI is built before showing the sheet
+    Future.delayed(Duration.zero, () {
+      Get.bottomSheet(
+          MyBottomSheet(),
+        isDismissible: false,
+        enableDrag: false,
+        isScrollControlled: false,
+      );
+    });
   }
 }

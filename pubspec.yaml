@@ -33,6 +33,7 @@ dependencies:
   image_card: ^0.0.4
   image_picker: ^1.1.2
   intl: ^0.20.2
+  liquid_glass_renderer: ^0.1.1-dev.26
   lottie: ^3.3.1
   shared_preferences: ^2.5.3
   smooth_page_indicator: ^1.2.1
@@ -60,6 +61,7 @@ flutter:
       - lib/User_panel/screens/splash_screens/images/intro.jpg
       - lib/User_panel/screens/splash_screens/images/
       - lib/User_panel/screens/splash_screens/images/junaid.png
+      - lib/User_panel/screens/splash_screens/images/sign.jpg
       - assets/splash.json
       # - lib/screens/splash_screens/images/cam3.png
       # - lib/screens/splash_screens/images/cam4.png

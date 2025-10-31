@@ -1,5 +1,7 @@
 import 'package:stacked/stacked_annotations.dart';
+import 'package:stacked_services/stacked_services.dart';
 
+import '../User_panel/Get-x_controllers/google_controller.dart';
 import '../User_panel/Service_Get_x_data/Authentication.dart';
 import '../User_panel/Service_Get_x_data/google_auth.dart';
 import '../User_panel/screens/Add_To_Cart/Add_to_view_model.dart';
@@ -24,6 +26,8 @@ import '../User_panel/screens/splash_screens/splash_view.dart';
     LazySingleton(classType: ProfileViewModel),
     LazySingleton(classType: RegisterViewModel),
     LazySingleton(classType: Authentication),
+    LazySingleton(classType: DialogService),
+    LazySingleton(classType: GoogleController),
   ],
 )
 class AppSetup {}

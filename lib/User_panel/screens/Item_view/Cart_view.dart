@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:my_first_app/User_panel/screens/Models/Rating_Model.dart';
+import 'package:my_first_app/User_panel/Models/Rating_Model.dart';
 import 'package:stacked/stacked.dart';
-import '../Models/Food_Models.dart';
+import '../../Models/Food_Models.dart';
 import 'Cart_view_model.dart';
 import 'Components/My_button.dart';
 

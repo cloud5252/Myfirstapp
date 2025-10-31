@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:my_first_app/User_panel/Registration/Sign_in/login_page.dart';
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:stacked/stacked.dart';
@@ -73,13 +76,7 @@ class IntroViewPage extends StatelessWidget {
                           ),
                         )
                       : GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const WellcomeView()));
-                          },
+                          onTap: () => Get.offAll(LoginPage()),
                           child: Text(
                             "done",
                             style: viemodel.buttonTextStyle,

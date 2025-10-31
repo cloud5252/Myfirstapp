@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_action_cell/core/cell.dart';
 import 'package:intl/intl.dart';
-import 'package:my_first_app/User_panel/screens/Models/ProductModel.dart';
+import 'package:my_first_app/User_panel/Models/ProductModel.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../Wish_list/Components/My_quantity_selector.dart';

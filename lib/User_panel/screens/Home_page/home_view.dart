@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:my_first_app/User_panel/screens/Add_To_Cart/Add_to_view.dart';
-import '../Models/Food_Models.dart';
+import '../../Models/Food_Models.dart';
 import '../Item_view/Cart_view.dart';
 import 'Components/My_Offer_collection.dart';
 import 'Components/My_Sliver_appbar.dart';

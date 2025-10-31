@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:my_first_app/User_panel/screens/Orders/Orders_view_model.dart';
 import 'package:stacked/stacked.dart';
 
-import '../Models/Order_model.dart';
+import '../../Models/Order_model.dart';
 import 'component/All_Orders.dart';
 
 class OrdersView extends StatelessWidget {

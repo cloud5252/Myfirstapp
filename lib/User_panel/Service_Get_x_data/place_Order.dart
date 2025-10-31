@@ -7,7 +7,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:my_first_app/User_panel/Service_Get_x_data/random_order_id.dart';
 import 'package:my_first_app/User_panel/screens/Home_page/home_view.dart';
-import 'package:my_first_app/User_panel/screens/Models/Order_model.dart';
+import 'package:my_first_app/User_panel/Models/Order_model.dart';
 
 void placeOrder({
   required String costomerName,

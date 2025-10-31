@@ -7,44 +7,24 @@ import 'package:get/get.dart';
 import 'package:my_first_app/Locator/app.locator.dart';
 import 'package:my_first_app/User_panel/Service_Get_x_data/Authentication.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../screens/Home_page/home_view.dart';
+import 'Component/My_bottom_sheet.dart';
 
 class RegisterViewModel extends BaseViewModel {
   final namecontroller = TextEditingController();
   final Emailcontroller = TextEditingController();
   final Passwordcontroller = TextEditingController();
-  final phonecontroller = TextEditingController();
-  final citycontroller = TextEditingController();
-  final Confirmpasswordcontroller = TextEditingController();
   void signUp(BuildContext context) async {
     String password = Passwordcontroller.text.trim();
-    String confirmPassword = Confirmpasswordcontroller.text.trim();
     String name = namecontroller.text.trim();
     String email = Emailcontroller.text.trim();
-    String phoneNumber = phonecontroller.text.trim();
-    String city = citycontroller.text.trim();
+
     String? token = await FirebaseMessaging.instance.getToken();
 
-    if (name.isEmpty ||
-        email.isEmpty ||
-        phoneNumber.isEmpty ||
-        city.isEmpty ||
-        password.isEmpty ||
-        confirmPassword.isEmpty) {
+    if (name.isEmpty || email.isEmpty || password.isEmpty) {
       Get.snackbar(
         'Error',
         'Please check your Textfields',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.blue.shade900,
-        colorText: Colors.white,
-      );
-      return;
-    }
-    if (password != confirmPassword) {
-      Get.snackbar(
-        'Error',
-        'Please check your password & confirmed password',
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.blue.shade900,
         colorText: Colors.white,
@@ -66,12 +46,10 @@ class RegisterViewModel extends BaseViewModel {
         "username": Emailcontroller.text.split('@')[0],
         "email": email,
         "uid": userCredential.user!.uid,
-        "Phone": phoneNumber,
         "isActive": true,
         "createOn": DateTime.now(),
         "DeviceToken": token,
         "status": name,
-        "City": city,
         "addmin": true,
       });
 
@@ -93,5 +71,16 @@ class RegisterViewModel extends BaseViewModel {
       EasyLoading.dismiss();
       print('Error: ${e.toString()}');
     }
+  }
+
+  void initialises() {
+    Future.delayed(Duration.zero, () {
+      Get.bottomSheet(
+          MyBottomSheet(),
+        isDismissible: false,
+        enableDrag: false,
+        isScrollControlled: false,
+      );
+    });
   }
 }

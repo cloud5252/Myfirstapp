@@ -50,16 +50,14 @@ class GoogleController extends GetxController {
         uid: users!.uid,
         username: users.displayName ?? 'No Name',
         email: users.email ?? '',
-        phone: registerPage.phonecontroller.text,
         userimage: users.photoURL ?? '',
         userdivicetoken: token.toString(),
-        country: registerPage.citycontroller.text.trim(),
         useraddress: '',
         street: '',
         isaddmin: false,
         isactive: true,
         createdon: DateTime.now(),
-        city: '',
+       
       );
 
       await _firestore.collection("users").doc(users.email).set(model.toMap());

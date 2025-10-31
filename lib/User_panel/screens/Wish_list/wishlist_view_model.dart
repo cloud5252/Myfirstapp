@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:stacked/stacked.dart';
-import '../Models/Food.dart';
+import '../../Models/Food.dart';
 
 class CartViewModel extends BaseViewModel {
   void showdailog(BuildContext context) {

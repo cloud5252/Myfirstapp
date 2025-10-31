@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../Models/Food_Models.dart';
+import '../../../Models/Food_Models.dart';
 
 class MyFoodTilee extends StatelessWidget {
   final Foodd food;

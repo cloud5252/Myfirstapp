@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swipe_action_cell/core/cell.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:my_first_app/User_panel/screens/Models/Order_model.dart';
+import 'package:my_first_app/User_panel/Models/Order_model.dart';
 import 'package:my_first_app/User_panel/screens/Orders/Orders_view_model.dart';
 import 'package:my_first_app/User_panel/screens/Rating_bar/Add_reviews_view.dart';
 import 'package:stacked/stacked.dart';

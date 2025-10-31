@@ -10,15 +10,15 @@ class GoogleButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 5),
         child: Container(
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: Colors.blue.shade900,
+            color: Colors.orange.shade500,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Padding(
-            padding: const EdgeInsets.only(left: 40),
+            padding: const EdgeInsets.only(left: 60),
             child: Row(
               children: [
                 Container(
@@ -35,12 +35,14 @@ class GoogleButton extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  width: 20,
+                  width: 30,
                 ),
                 Text(
                   text,
                   style: const TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
                 ),
               ],
             ),
@@ -70,7 +72,7 @@ class getstarted extends StatelessWidget {
           child: Text(
             text,
             style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold),
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
           ),
         ),
       ),

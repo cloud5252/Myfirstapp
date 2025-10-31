@@ -1,6 +1,7 @@
 import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:my_first_app/Locator/app.router.dart';
 import 'package:my_first_app/firebase_options.dart';
 
@@ -19,6 +20,7 @@ Future<void> main() async {
     appleProvider: AppleProvider.deviceCheck, // iOS ke liye
     // androidProvider: AndroidProvider.playIntegrity, // or debug for testing
   );
+
   print('FCM Token: $token');
   runApp(const MyApp());
 }

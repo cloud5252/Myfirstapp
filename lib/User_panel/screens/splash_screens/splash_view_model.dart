@@ -8,7 +8,7 @@ import 'package:stacked_services/stacked_services.dart';
 
 import '../../../Locator/app.locator.dart';
 import '../../../Locator/app.router.dart';
-import '../ADDMIN_VIEW/Addmin_view.dart';
+ import '../AddminView/AddminView.dart';
 import '../Fire_base_service/addmin&userdata.dart';
 import '../Home_page/home_view.dart';
 import '../Welcome/wellcome_view.dart';
@@ -41,7 +41,7 @@ class SplashViewModel extends BaseViewModel {
         var userDocument = userData[0].data() as Map<String, dynamic>;
 
         if (userDocument['addmin'] == true) {
-          Get.offAll(() => const AddminView());
+          Get.offAll(() => const Addminview());
         } else {
           Get.offAll(() => const HomeView());
         }

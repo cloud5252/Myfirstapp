@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:my_first_app/User_panel/screens/Models/Order_model.dart';
-import 'package:my_first_app/User_panel/screens/Models/Rating_Model.dart';
+import 'package:my_first_app/User_panel/Models/Order_model.dart';
+import 'package:my_first_app/User_panel/Models/Rating_Model.dart';
 import 'package:my_first_app/User_panel/screens/Rating_bar/Add_review_model.dart';
 import 'package:stacked/stacked.dart';
 

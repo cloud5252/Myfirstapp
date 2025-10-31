@@ -1,4 +1,4 @@
-import '../Home_page/homr_view_model.dart';
+import '../screens/Home_page/homr_view_model.dart';
 
 class Food {
   final String imagpath;
